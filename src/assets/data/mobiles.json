@@ -1,0 +1,280 @@
+{
+  "customers": [
+    {
+      "id": 101,
+      "name": "Vignesh",
+      "address": "Vettu road, Trivandrum",
+      "email": "vignesh@test.com",
+      "phone": "9898767600"
+    },
+    {
+      "id": 304,
+      "name": "Arun",
+      "address": "Nungambakkam, Chennai",
+      "email": "arun@test.com",
+      "phone": "9078785500"
+    },
+    {
+      "name": "Arul Murugan",
+      "address": "Silkboard, Bangalore",
+      "email": "arul@test.com",
+      "phone": "9895908787",
+      "id": 336
+    },
+    {
+      "name": "Dinesh",
+      "address": "Madivala, Bangalore",
+      "email": "dinesh@test.com",
+      "phone": "9898954000",
+      "id": 20
+    },
+    {
+      "name": "Sriram",
+      "address": "Besant nagar, Chennai",
+      "email": "sriram@test.com",
+      "phone": "9001239002",
+      "id": 14
+    },
+    {
+      "name": "Keerti",
+      "address": "Madivala, Bangalore",
+      "email": "keerti@test.com",
+      "phone": "9897554400",
+      "id": 529
+    },
+    {
+      "name": " Vasu",
+      "address": "Changi, Singapore",
+      "email": "vasu@test.com",
+      "phone": "8998000799",
+      "id": 638
+    },
+    {
+      "name": "Arun kumar",
+      "address": "Vadasery, Nagercoil",
+      "email": "arunkumar@test.com",
+      "phone": "9898765432",
+      "id": 849
+    },
+    {
+      "name": "TestA",
+      "address": "test address, line 2",
+      "email": "testa@test.com",
+      "phone": "9999900000",
+      "id": 766
+    },
+    {
+      "name": "TestB",
+      "address": "test address, line 2",
+      "email": "testb@test.com",
+      "phone": "9888880000",
+      "id": 124
+    }
+  ],
+  "orders": [
+    {
+      "mobiles": [
+        {
+          "id": 2,
+          "brand": "Samsung",
+          "name": "A20",
+          "price": 14900,
+          "desc": "description about Samsung A20 mobile",
+          "quantity": "1",
+          "url": "../assets/samsung.jpg"
+        },
+        {
+          "id": 3,
+          "brand": "Samsung",
+          "name": "A30",
+          "price": 18999,
+          "desc": "description about Samsung A30 mobile",
+          "quantity": "1",
+          "url": "../assets/samsung.jpg"
+        }
+      ],
+      "orderTotal": 33899,
+      "customerId": "101",
+      "id": 324
+    },
+    {
+      "mobiles": [
+        {
+          "id": 1,
+          "brand": "Samsung",
+          "name": "A10",
+          "price": 12990,
+          "desc": "description about Samsung A10 mobile",
+          "quantity": "1",
+          "url": "../assets/samsung.jpg"
+        }
+      ],
+      "orderTotal": 12990,
+      "customerId": "101",
+      "id": 608
+    },
+    {
+      "mobiles": [
+        {
+          "id": 1,
+          "brand": "Samsung",
+          "name": "A10",
+          "price": 12990,
+          "desc": "description about Samsung A10 mobile",
+          "quantity": 3,
+          "url": "../assets/samsung.jpg"
+        }
+      ],
+      "orderTotal": 38970,
+      "customerId": "304",
+      "id": 777
+    }
+  ],
+  "mobiles": [
+    {
+      "id": 1,
+      "brand": "Samsung",
+      "name": "A10",
+      "price": 12990,
+      "desc": "description about Samsung A10 mobile",
+      "quantity": 3,
+      "url": "../assets/samsung.jpg"
+    },
+    {
+      "id": 2,
+      "brand": "Samsung",
+      "name": "A20",
+      "price": 14900,
+      "desc": "description about Samsung A20 mobile",
+      "quantity": 3,
+      "url": "../assets/samsung.jpg"
+    },
+    {
+      "id": 3,
+      "brand": "Samsung",
+      "name": "A30",
+      "price": 18999,
+      "desc": "description about Samsung A30 mobile",
+      "quantity": 3,
+      "url": "../assets/samsung.jpg"
+    },
+    {
+      "id": 4,
+      "brand": "Samsung",
+      "name": "M10",
+      "price": 8000,
+      "desc": "description about Samsung M10 mobile",
+      "quantity": 3,
+      "url": "../assets/samsung.jpg"
+    },
+    {
+      "id": 5,
+      "brand": "Samsung",
+      "name": "M20",
+      "price": 8999,
+      "desc": "description about Samsung M20 mobile",
+      "quantity": 3,
+      "url": "../assets/samsung.jpg"
+    },
+    {
+      "id": 6,
+      "brand": "IPhone",
+      "name": "6",
+      "price": 45000,
+      "desc": "description about IPhone 6 mobile",
+      "quantity": 3,
+      "url": "../assets/iphone.jpg"
+    },
+    {
+      "id": 7,
+      "brand": "IPhone",
+      "name": "6S",
+      "price": 54000,
+      "desc": "description about IPhone 6S mobile",
+      "quantity": 3,
+      "url": "../assets/iphone.jpg"
+    },
+    {
+      "id": 8,
+      "brand": "IPhone",
+      "name": "10",
+      "price": 70000,
+      "desc": "description about IPhone 10 mobile",
+      "quantity": 3,
+      "url": "../assets/iphone.jpg"
+    },
+    {
+      "id": 9,
+      "brand": "IPhone",
+      "name": "10X",
+      "price": 75000,
+      "desc": "description about IPhone 10X mobile",
+      "quantity": 3,
+      "url": "../assets/iphone.jpg"
+    },
+    {
+      "id": 10,
+      "brand": "IPhone",
+      "name": "5E",
+      "price": 18000,
+      "desc": "description about IPhone 5E mobile",
+      "quantity": 3,
+      "url": "../assets/iphone.jpg"
+    },
+    {
+      "id": 11,
+      "brand": "Oppo",
+      "name": "Reno 2",
+      "price": 12000,
+      "desc": "description about Oppo Reno 2 mobile",
+      "quantity": 3,
+      "url": "../assets/oppo.jpg"
+    },
+    {
+      "id": 12,
+      "brand": "Oppo",
+      "name": "F11",
+      "price": 9999,
+      "desc": "description about Oppo F11 mobile",
+      "quantity": 3,
+      "url": "../assets/oppo.jpg"
+    },
+    {
+      "id": 13,
+      "brand": "Oppo",
+      "name": "F11 Pro",
+      "price": 10999,
+      "desc": "description about Oppo F11 Pro mobile",
+      "quantity": 3,
+      "url": "../assets/oppo.jpg"
+    },
+    {
+      "id": 14,
+      "brand": "Oppo",
+      "name": "F15",
+      "price": 14999,
+      "desc": "description about Oppo F15 mobile",
+      "quantity": 3,
+      "url": "../assets/oppo.jpg"
+    },
+    {
+      "id": 15,
+      "brand": "Oppo",
+      "name": "A5",
+      "price": 7999,
+      "desc": "description about Oppo A5 mobile",
+      "quantity": 3,
+      "url": "../assets/oppo.jpg"
+    },
+    {
+      "name": "A 40 ",
+      "brand": "Samsung",
+      "price": "14999",
+      "available": "true",
+      "desc": "Newly launched series of mobiles",
+      "quantity": "1",
+      "url": "../assets/samsung.jpg",
+      "id": 935
+    }
+  ]
+}

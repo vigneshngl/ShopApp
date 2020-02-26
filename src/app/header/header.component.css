@@ -1,0 +1,10 @@
+.header {
+    text-align: center;
+    height: 50px;
+    background-color: #cefc03;
+}
+
+.titleText {
+    margin: auto;
+    font-weight: bolder;
+}

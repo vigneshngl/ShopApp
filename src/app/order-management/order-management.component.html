@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>Order history of {{customer.name}}</h4>
+            <div *ngFor="let o of orders">
+                <h6>Order Id : {{o.id}}</h6>
+                <div class="jumbotron">
+                    <div class="row row-header">
+                        <div class="col-sm-4">
+                            <b>Mobile Name</b>
+                        </div>
+                        <div class="col-sm-3">
+                            <b>Quantity</b>                            
+                        </div>
+                        <div class="col-sm-5">
+                            <b>Total Price</b>                            
+                        </div>
+                    </div>
+                    <div *ngFor="let om of o.mobiles" class="row row-striped">
+                        <div class="col-sm-4">
+                            {{om.brand}}-{{om.name}}
+                        </div>
+                        <div class="col-sm-3">
+                            {{om.quantity}}
+                        </div>
+                        <div class="col-sm-5">
+                            {{om.price * om.quantity | currency:'INR' }}
+                        </div>
+                    </div>
+                    <div class="row row-footer">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-3">
+                            <b>Total payable</b>                            
+                        </div>
+                        <div class="col-sm-5">
+                            <b>{{o.orderTotal | tax | currency:'INR' }}</b>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

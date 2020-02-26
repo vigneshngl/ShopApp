@@ -1,0 +1,117 @@
+<div class="container">
+    <div class="row">
+        <div class="jumbotron col-sm-9">
+            <form class="form-horizontal" [formGroup]="reactForm" (ngSubmit)="updateMobile()">
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Mobile name</label>
+                    <div class="col-sm-9">
+                        <input formControlName="name" type="text" class="form-control" /> 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Brand</label>
+                    <div class="col-sm-9">
+                        <select formControlName="brand" class="form-control">
+                            <option *ngFor="let b of brands" value="b">{{b}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Availability</label>
+                    <div class="col-sm-9">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input formControlName="available" name="available" type="radio" class="form-check-input" value="true" />Yes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input name="available" type="radio" class="form-check-input" value="false" />No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Price</label>
+                    <div class="col-sm-9">
+                        <input formControlName="price" type="text" class="form-control" /> 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Description</label>
+                    <div class="col-sm-9">
+                        <input formControlName="desc" type="text" class="form-control" /> 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Quantity</label>
+                    <div class="col-sm-9">
+                        <input formControlName="quantity" type="text" class="form-control" /> 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Image name</label>
+                    <div class="col-sm-9">
+                        <input formControlName="url" type="text" class="form-control" /> 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-9">
+                        <button type="submit" [disabled]="!reactForm.valid" class="btn btn-primary">Add Mobile</button> &nbsp;
+                        <button type="reset" class="btn btn-secondary">Clear</button> &nbsp;
+                        <a class="btn btn-info" [routerLink]="['//mobiles']">Go to mobiles</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <div *ngIf="!reactForm.valid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div *ngIf="reactForm.get('name').touched || reactForm.get('name').dirty">
+                            <div *ngIf="reactForm.get('name').hasError('required')"
+                                class="alert alert-danger">
+                                Mobile name is mandatory
+                            </div>
+                            <div *ngIf="reactForm.get('name').hasError('pattern')"
+                                class="alert alert-danger">
+                                Enter valid mobile name
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div *ngIf="reactForm.get('price').touched || reactForm.get('price').dirty">
+                            <div *ngIf="reactForm.get('price').hasError('required')"
+                                class="alert alert-danger">
+                                Mobile price is mandatory
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div *ngIf="reactForm.get('available').touched || reactForm.get('available').dirty">
+                            <div *ngIf="reactForm.get('available').hasError('required')"
+                                class="alert alert-danger">
+                                Mobile availability is mandatory
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div *ngIf="reactForm.get('url').touched || reactForm.get('url').dirty">
+                            <div *ngIf="reactForm.get('url').hasError('required')"
+                                class="alert alert-danger">
+                                Image name is mandatory
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">Customer Name :</div>
+        <div class="col-sm-8">
+            <input type="text" [(ngModel)]="name" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">Customer address:</div>
+        <div class="col-sm-8">
+            <input type="text" [(ngModel)]="address" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">Phone number :</div>
+        <div class="col-sm-8">
+            <input type="text" [(ngModel)]="phone" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">Email :</div>
+        <div class="col-sm-8">
+            <input type="text" [(ngModel)]="email" />
+        </div>
+    </div>
+    <div class="row">
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            Deliver the package to the following address
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <br>
+            {{name}} <br>
+            {{address}} <br>
+            {{phone}} <br>
+            {{email}}
+        </div>
+    </div>
+</div>

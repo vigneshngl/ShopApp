@@ -1,0 +1,127 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8 custom-container jumbotron">
+            <form class="form-horizontal" #addMobileForm="ngForm" (ngSubmit)="addNewMobile(addMobileForm)">
+                <fieldset>
+                    <legend>Add new mobile</legend>
+
+                    <div class="row form-group">
+                        <div class="col-sm-3">
+                            <label for="name">Mobile Name</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="mobileName" name="name"
+                            placeholder="Enter mobile name"
+                            [ngModel]="mobile.name"
+                            #name="ngModel"
+                            required
+                            minlength="2"
+                            maxlength="8" />
+                        </div>
+                        <div class="col-sm-5">
+                            <div *ngIf="name.touched && name.errors?.required" class="alert alert-danger">
+                                Enter name of the product
+                            </div>
+                            <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+                                Enter valid name for the product
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="row form-group">
+                        <div class="col-sm-3">
+                            <label for="brand">Brand</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <select [ngModel]="mobile.brand" id="mobileBrand" name="brand">
+                                <option *ngFor="let b of brands" value="{{b}}">{{b}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-5">
+                            
+                        </div>                       
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-3">
+                            <label for="desc">Description</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="mobileDescription" name="desc"
+                                placeholder="Enter mobile description"
+                                [ngModel]="mobile.desc"
+                                #description="ngModel"
+                                required />
+                        </div>
+                        <div class="col-sm-5">
+                            <div *ngIf="description.touched && description.errors?.required" class="alert alert-danger">
+                                Enter description of the product
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-3">
+                            <label for="available">Availability</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="radio" id="mobileAvailabilityYes" name="available" 
+                                [ngModel]="mobile.available" 
+                                value="true"
+                                required
+                                #available="ngModel" /> Yes
+                            <input type="radio" id="mobileAvailabilityNo" name="available" 
+                                [ngModel]="mobile.available" 
+                                value="false"
+                                required /> No
+                        </div>
+                        <div class="col-sm-5">
+                            <div *ngIf="available.touched && available.errors?.required" class="alert alert-danger">
+                                Select availability of the product
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-3">
+                            <label for="price">Price</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="mobilePrice" name="price"
+                                placeholder="Enter mobile price"
+                                [ngModel]="mobile.price"
+                                #price="ngModel"
+                                required />
+                        </div>
+                        <div class="col-sm-5">
+                            <div *ngIf="price.touched && price.errors?.required" class="alert alert-danger">
+                                Select availability of the product
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-3">
+                            <label for="url">Image</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" id="mobileImage" name="url"
+                                placeholder="Enter mobile image name"
+                                [ngModel]="mobile.url"
+                                #url="ngModel"
+                                required />
+                        </div>
+                        <div class="col-sm-5">
+                            <div *ngIf="url.touched && url.errors?.required" class="alert alert-danger">
+                                Enter image name
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-8">
+                            <button type="submit" class="btn btn-primary">Add Mobile</button>
+                        </div>                        
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>

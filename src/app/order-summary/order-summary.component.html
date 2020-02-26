@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <h4>Order Summary</h4>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 jumbotron">
+            <h5>Cart details</h5>
+            <div>
+                <div class="row row-header">
+                    <div class="col-sm-4">
+                        <b>Mobile Name</b>                        
+                    </div>
+                    <div class="col-sm-3">
+                        <b>Quantity</b>                        
+                    </div>
+                    <div class="col-sm-5">
+                        <b>Total Price</b>                        
+                    </div>
+                </div>
+                <div *ngFor="let cartMobile of newOrder.mobiles" class="row row-striped">
+                    <div class="col-sm-4">
+                        {{cartMobile.name}}
+                    </div>
+                    <div class="col-sm-3">
+                        {{cartMobile.quantity}}
+                    </div>
+                    <div class="col-sm-5">
+                        {{cartMobile.price * cartMobile.quantity | currency:'INR' }}
+                    </div>
+                </div>
+                <div class="row row-footer">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-3">
+                        <b>Total payable</b>                        
+                    </div>
+                    <div class="col-sm-5">
+                        <b>{{newOrder.orderTotal | tax | currency:'INR' }}</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5 jumbotron">
+            <h5>Customer details</h5>
+            <p><b>Name : </b>{{customer.name}} </p>
+            <p><b>Address : </b>{{customer.address}} </p>
+            <p><b>Email : </b>{{customer.email}} </p>
+            <p><b>Phone : </b>{{customer.phone}} </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <button class="btn btn-primary" (click)="confirmOrder()">Confirm Order</button>
+        </div>
+    </div>
+</div>

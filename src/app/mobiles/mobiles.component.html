@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="row">
+    <div class="col-sm-9">    
+        <div class="row">
+            <div class="col-sm-12 brandSelect">
+                Select a brand : 
+                <select [(ngModel)]="selectedBrand" (change)="filterByBrand()">
+                    <option *ngFor="let brand of brands" [ngValue]="brand">{{brand}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngFor="let mobile of selectedMobiles" class="col-sm-4">
+                <!-- <div class="card">
+                    <img class="card-img-top" [src]="mobile.url" alt="{{mobile.brand}}-{{mobile.name}}">
+                    <div class="card-body">
+                        <h4 class="card-title">{{mobile.brand}}-{{mobile.name}}</h4>
+                        <p class="card-text">{{mobile.desc}}</p>
+                        <p class="card-text">Price : {{mobile.price}}</p>
+                        <p class="card-text">
+                            Quantity :
+                            <input type="text" [(ngModel)]="mobile.quantity" (change)="refreshMobileCart()" />
+                        </p>
+                        <a [routeLink]="['/mobiles/update', mobile.id]" class="btn btn-primary">Update</a>
+                        &nbsp;
+                        <button (click)="removeMobile(mobile.id)" class="btn btn-danger">Remove</button>
+                    </div>
+                </div> -->
+                <div class="row">
+                    <div class="col-sm-12 mheader">
+                        <input type="checkbox" [value]="mobile.id" (change)="getInfo($event)" />
+                        {{mobile.brand}}-{{mobile.name}}
+                    </div>
+                </div>
+                <div class="row mobile">
+                    <div class="col-sm-12">
+                        <img class="img-fluid mimage" appZoom height="175" [src]="mobile.url" />
+                    </div>
+                    <div class="col-sm-12">
+                        Price : {{mobile.price}}
+                    </div>
+                    <div class="col-sm-12">
+                        Description : {{mobile.desc}}
+                    </div>
+                    <div class="col-sm-12">
+                        Quantity :
+                        <input type="text" [(ngModel)]="mobile.quantity" (change)="refreshMobileCart()" />
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div class="col-sm-3">
+        <div class="row">
+            <div class="col-sm-12 brandSelect">
+                Your cart
+            </div>
+        </div>        
+        <div *ngIf="showInfoMobile">
+            <div class="row row-header">
+                <!-- <div class="col-sm-2">
+                    Brand
+                </div> -->
+                <div class="col-sm-4">
+                    Mobile Name
+                </div>
+                <!-- <div class="col-sm-2">
+                    Price
+                </div> -->
+                <div class="col-sm-3">
+                    Quantity
+                </div>
+                <div class="col-sm-5">
+                    Total Price
+                </div>
+            </div>
+            <div *ngFor="let cartMobile of mobileCart" class="row row-striped">
+                <!-- <div class="col-sm-2">
+                    {{cartMobile.brand}}
+                </div> -->
+                <div class="col-sm-4">
+                    {{cartMobile.name}}
+                </div>
+                <!-- <div class="col-sm-2">
+                    {{cartMobile.price}}
+                </div> -->
+                <div class="col-sm-3">
+                    {{cartMobile.quantity}}
+                </div>
+                <div class="col-sm-5">
+                    {{cartMobile.price * cartMobile.quantity | currency:'INR' }}
+                </div>
+            </div>
+            <div class="row row-footer">
+                <div class="col-sm-7">
+                    Total payable
+                </div>
+                <div class="col-sm-5">
+                    {{cartTotal | tax | currency:'INR' }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button class="btn btn-primary" (click)="showContactDetails()">Proceed</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

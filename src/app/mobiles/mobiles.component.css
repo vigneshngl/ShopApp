@@ -1,0 +1,31 @@
+.mobile {
+    border: 1px solid grey;
+    margin: 5px 0px;
+    padding: 10px;
+}
+
+.brandSelect {
+    padding: 10px 0px;
+}
+
+.mheader {
+    text-transform: capitalize;
+    font-weight: bold;
+    text-align: center;
+}
+
+.mimage {
+    width: 200px;
+}
+
+.row-header, .row-footer {
+    font-weight: bold;
+}
+
+.row-striped:nth-of-type(odd){
+    background-color: #ffffff;
+}
+
+.row-striped:nth-of-type(even){
+    background-color: #efefef;
+}

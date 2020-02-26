@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4>
+                Order address details
+            </h4>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+                <label for="select">Select Customer:</label>
+                <select (change)="selectCustomer($event)" [(ngModel)]="customerId">
+                    <option value="0">New Customer</option>
+                    <option *ngFor="let c of Customers" value="{{c.id}}">{{c.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <form [formGroup]="contactForm" (ngSubmit)="saveAddress(contactForm, $event)">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input formControlName="name" type="text" class="form-control" placeholder="Enter name" id="name">
+                </div>
+                <div *ngIf="contactForm.get('name').touched || contactForm.get('name').dirty">
+                    <div *ngIf="contactForm.get('name').hasError('required')"
+                        class="alert alert-danger">
+                        Please enter name
+                    </div>
+                    <div *ngIf="contactForm.get('name').hasError('pattern')"
+                        class="alert alert-danger">
+                        Enter valid name
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input formControlName="address" type="text" class="form-control" placeholder="Enter address" id="address">
+                </div>
+                <div *ngIf="contactForm.get('address').touched || contactForm.get('address').dirty">
+                    <div *ngIf="contactForm.get('address').hasError('required')"
+                        class="alert alert-danger">
+                        Please enter address
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input formControlName="email" type="email" class="form-control" placeholder="Enter email" id="email">
+                </div>
+                <div *ngIf="contactForm.get('email').touched || contactForm.get('email').dirty">
+                    <div *ngIf="contactForm.get('email').hasError('required')"
+                        class="alert alert-danger">
+                        Please enter email
+                    </div>
+                    <div *ngIf="contactForm.get('email').hasError('email')"
+                        class="alert alert-danger">
+                        Enter valid email
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input formControlName="phone" type="text" class="form-control" placeholder="Enter phone" id="phone">
+                </div>
+                <div *ngIf="contactForm.get('phone').touched || contactForm.get('phone').dirty">
+                    <div *ngIf="contactForm.get('phone').hasError('required')"
+                        class="alert alert-danger">
+                        Please enter phone number
+                    </div>
+                    <div *ngIf="contactForm.get('phone').hasError('pattern')"
+                        class="alert alert-danger">
+                        Enter valid phone number
+                    </div>
+                </div>
+                <button *ngIf="allowAddCustomer" [disabled]="!contactForm.valid" type="submit" class="btn btn-primary">Add Customer</button>
+                &nbsp;
+                <button type="button" class="btn btn-primary" (click)="proceedOrder()">Proceed</button>
+            </form>
+        </div>
+    </div>
+</div>
