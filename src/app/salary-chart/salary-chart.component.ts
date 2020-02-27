@@ -97,8 +97,49 @@ export class SalaryChartComponent implements OnInit {
             }
           }
         })
+
+
+        /* Pie chart */
+        
+        let salaryByDept = []
+        let deptColors = []
+
+        deptNames.forEach(dep => {
+          salaryByDept.push(data.filter(e => e.department == dep).reduce((pv, cv) => pv + cv.salary, 0))
+          deptColors.push(this.getColorCode())
+        });
+
+        let pieChart = new Chart("pieChart", {
+          type: "pie",
+          data: {
+            datasets: [
+              {
+                label: "Salary by department",
+                data: salaryByDept,
+                backgroundColor: deptColors
+              }
+            ],
+            labels: deptNames
+          },
+          options: {
+            responsive: true,
+            title: {
+              display: true,
+              text: 'Breakdown - Salary by department'
+            }
+          }
+        })
+
       }
     )
+  }
+
+  getColorCode() {
+    let n = 0
+    do {
+      n = Math.floor(Math.random() * 1000000)
+    } while (n < 100000)
+    return `#${n}`
   }
 
   addRandomEmployees() {
