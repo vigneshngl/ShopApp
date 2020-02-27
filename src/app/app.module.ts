@@ -19,6 +19,8 @@ import { ContactService } from './contact.service';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { OrderManagementComponent } from './order-management/order-management.component';
 import { TaxPipe } from './tax.pipe';
+import { SalaryChartComponent } from './salary-chart/salary-chart.component';
+import { SalaryChartService } from './salary-chart.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { TaxPipe } from './tax.pipe';
     ContactDetailsComponent,
     OrderSummaryComponent,
     OrderManagementComponent,
-    TaxPipe
+    TaxPipe,
+    SalaryChartComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,12 @@ import { TaxPipe } from './tax.pipe';
     FormsModule,
     HttpClientModule
   ],
-  providers: [MobilesService, MobilecartService, ContactService],
+  providers: [
+    MobilesService, 
+    MobilecartService, 
+    ContactService,
+    SalaryChartService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
